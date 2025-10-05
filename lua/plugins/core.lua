@@ -21,7 +21,7 @@ return {
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "go", "dockerfile" },
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "go", "dockerfile" },
         highlight = { enable = true },
         indent = { enable = true },
       })
@@ -52,7 +52,7 @@ return {
         desc = "Find files",
       },
       {
-        "<leader>fg",
+        "<leader>lg",
         function() require("fzf-lua").live_grep() end,
         desc = "Live grep",
       },
@@ -61,7 +61,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     opts = {
-      open_mapping = "<C-t>",
+      open_mapping = "<leader>ft",
       direction = "float",
     },
   },
