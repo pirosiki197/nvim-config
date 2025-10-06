@@ -11,8 +11,8 @@ return {
   {
     "ojroques/nvim-osc52",
     config = function()
-      vim.keymap.set("n", "<leader>c", require("osc52").copy_operator, {expr = true})
-      vim.keymap.set("n", "<leader>cc", "<leader>c_", {remap = true})
+      vim.keymap.set("n", "<leader>c", require("osc52").copy_operator, { expr = true })
+      vim.keymap.set("n", "<leader>cc", "<leader>c_", { remap = true })
       vim.keymap.set("v", "<leader>c", require("osc52").copy_visual)
     end,
   },
@@ -37,9 +37,7 @@ return {
   },
   {
     "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup({})
-    end,
+    opts = {},
   },
   {
     "ibhagwan/fzf-lua",
@@ -61,7 +59,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     opts = {
-      open_mapping = "<leader>ft",
+      open_mapping = { "<C-\\>", "<c-¥>" },
       direction = "float",
     },
   },

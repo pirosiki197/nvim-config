@@ -1,4 +1,4 @@
-vim.opt.syntax = 'on'
+vim.opt.syntax = "on"
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.showmatch = true
@@ -9,7 +9,7 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
-vim.opt.encoding = 'utf-8'
+vim.opt.encoding = "utf-8"
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -25,8 +25,23 @@ vim.opt.undofile = true
 
 vim.o.wildmenu = true
 
-vim.keymap.set('i', 'jj', '<Esc>')
-vim.keymap.set('t', 'jj', '<C-\\><C-n>')
+vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("t", "jj", "<C-\\><C-n>")
 
-vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to above window" })
+
+vim.keymap.set("n", "<leader>/", "<cmd>noh<CR>", { desc = "Clear search highlights" })
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*",
+  callback = function()
+    if vim.fn.line("'\"") > 1 and vim.fn.line("'\"") <= vim.fn.line("$") then
+      vim.cmd('normal! g`"')
+    end
+  end,
+})
+
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic message" })
