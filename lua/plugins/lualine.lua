@@ -6,6 +6,7 @@ return {
       vim.opt.termguicolors = true
       require("bufferline").setup({
         options = {
+          close_command = function() require("mini.bufremove").delete() end,
           diagnostics = "nvim_lsp",
           diagnostics_indicator = function(count, level)
             local icon = level:match("error") and " " or " "
