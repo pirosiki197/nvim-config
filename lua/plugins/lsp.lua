@@ -6,7 +6,7 @@ return {
   {
     "stevearc/conform.nvim",
     opts = {
-      fomatters_by_ft = {
+      formatters_by_ft = {
         go = { "goimports" },
       },
       format_on_save = {
@@ -15,4 +15,9 @@ return {
       },
     },
   },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "InsertEnter",
+    opts = {},
+  }
 }

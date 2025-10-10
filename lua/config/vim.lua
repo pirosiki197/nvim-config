@@ -1,3 +1,6 @@
+vim.api.nvim_set_var('loaded_netrw', 1)
+vim.api.nvim_set_var('loaded_netrwPlugin', 1)
+
 vim.opt.syntax = "on"
 vim.opt.number = true
 vim.opt.cursorline = true
@@ -16,6 +19,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.cindent = true
 vim.opt.autoindent = true
+vim.opt.wrap = false
 
 vim.opt.backup = false
 vim.opt.swapfile = false

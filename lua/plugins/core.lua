@@ -17,44 +17,23 @@ return {
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "go", "dockerfile" },
-        highlight = { enable = true },
-        indent = { enable = true },
-      })
-    end,
-  },
-  {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("nvim-tree").setup({})
+      require("nvim-tree").setup({
+        update_focused_file = {
+          enable = true,
+        },
+        diagnostics = {
+          enable = true,
+        },
+      })
       vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree" })
     end,
   },
   {
     "windwp/nvim-autopairs",
     opts = {},
-  },
-  {
-    "ibhagwan/fzf-lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
-    keys = {
-      {
-        "<C-p>",
-        function() require("fzf-lua").files() end,
-        desc = "Find files",
-      },
-      {
-        "<leader>lg",
-        function() require("fzf-lua").live_grep() end,
-        desc = "Live grep",
-      },
-    },
   },
   {
     "akinsho/toggleterm.nvim",
