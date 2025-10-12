@@ -28,6 +28,7 @@ vim.opt.undolevels = 1000
 vim.opt.undofile = true
 
 vim.o.wildmenu = true
+vim.o.updatetime = 300
 
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("t", "jj", "<C-\\><C-n>")
