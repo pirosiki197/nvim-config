@@ -35,11 +35,4 @@ return {
     "windwp/nvim-autopairs",
     opts = {},
   },
-  {
-    "akinsho/toggleterm.nvim",
-    opts = {
-      open_mapping = { "<C-\\>", "<c-¥>" },
-      direction = "float",
-    },
-  },
 }
