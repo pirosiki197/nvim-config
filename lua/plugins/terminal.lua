@@ -12,6 +12,6 @@ return {
       hidden = true,
       direction = "float",
     })
-    vim.keymap.set("n", "<leader>g", function() lazygit:toggle() end, { noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>gg", function() lazygit:toggle() end, { noremap = true, silent = true })
   end
 }
