@@ -2,6 +2,7 @@ vim.lsp.enable({
   "lua_ls",
   "gopls",
   "clangd",
+  "pyright",
   "rust_analyzer",
   "zls",
 })
