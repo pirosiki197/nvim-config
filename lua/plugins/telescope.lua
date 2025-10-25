@@ -19,13 +19,13 @@ return {
       },
     })
     require("telescope").load_extension("fzf")
-    local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
-    vim.keymap.set("n", "<leader>lg", builtin.live_grep, { desc = "Live grep" })
-    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
-
-    vim.keymap.set("n", "grr", builtin.lsp_references, { desc = "Show references" })
-    vim.keymap.set("n", "gri", builtin.lsp_implementations, { desc = "Show implementations" })
-    vim.keymap.set("n", "gci", builtin.lsp_incoming_calls, { desc = "Show call hierarchy" })
-  end
+  end,
+  keys = {
+    { "<C-p>",      function() require("telescope.builtin").find_files() end,          desc = "Find files" },
+    { "<leader>lg", function() require("telescope.builtin").live_grep() end,           desc = "Live grep" },
+    { "<leader>fb", function() require("telescope.builtin").buffers() end,             desc = "Find buffers" },
+    { "grr",        function() require("telescope.builtin").lsp_references() end,      desc = "Show references" },
+    { "gri",        function() require("telescope.builtin").lsp_implementations() end, desc = "Show implementations" },
+    { "gci",        function() require("telescope.builtin").lsp_incoming_calls() end,  desc = "Show call hierarchy" }
+  }
 }
