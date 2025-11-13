@@ -17,21 +17,6 @@ return {
     end,
   },
   {
-    "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("nvim-tree").setup({
-        update_focused_file = {
-          enable = true,
-        },
-        diagnostics = {
-          enable = true,
-        },
-      })
-      vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree" })
-    end,
-  },
-  {
     "windwp/nvim-autopairs",
     opts = {},
   },
