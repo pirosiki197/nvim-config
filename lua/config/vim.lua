@@ -1,6 +1,3 @@
-vim.api.nvim_set_var('loaded_netrw', 1)
-vim.api.nvim_set_var('loaded_netrwPlugin', 1)
-
 vim.opt.syntax = "on"
 vim.opt.number = true
 vim.opt.cursorline = true
@@ -31,7 +28,6 @@ vim.o.wildmenu = true
 vim.o.updatetime = 300
 
 vim.keymap.set("i", "jj", "<Esc>")
-vim.keymap.set("t", "jj", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
