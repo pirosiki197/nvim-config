@@ -7,6 +7,7 @@ return {
       replace_netrw = true,
       enabled = true,
     },
+    indent = {},
     words = { enabled = true },
   },
   keys = {
