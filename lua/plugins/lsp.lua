@@ -8,6 +8,7 @@ return {
     opts = {
       formatters_by_ft = {
         go = { "goimports" },
+        terraform = { "terraform_fmt" },
       },
       format_on_save = {
         timeout_ms = 5000,
