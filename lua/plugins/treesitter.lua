@@ -17,6 +17,7 @@ return {
         "gomod",
         "dockerfile",
         "json",
+        "typescript",
         "rust",
         "yaml",
         "zig",
