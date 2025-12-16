@@ -8,6 +8,15 @@ vim.lsp.enable({
   "zls",
 })
 
+Snacks.keymap.set("n", "<leader>k",
+  function() vim.lsp.buf.hover({ border = "single" }) end,
+  { lsp = { method = "textDocument/hover" }, buffer = buf, desc = "Show hover documentation" })
+
+Snacks.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {
+  lsp = { method = "textDocument/codeAction" },
+  desc = "Code Action",
+})
+
 local lsp_group = vim.api.nvim_create_augroup("my.lsp", { clear = true })
 vim.api.nvim_create_autocmd("LspAttach", {
   group = lsp_group,
@@ -18,15 +27,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client:supports_method("textDocument/inlayHint") then
       vim.lsp.inlay_hint.enable(true, { bufnr = buf })
     end
-
-    Snacks.keymap.set("n", "<leader>k",
-      function() vim.lsp.buf.hover({ border = "single" }) end,
-      { lsp = { method = "textDocument/hover" }, buffer = buf, desc = "Show hover documentation" })
-
-    Snacks.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {
-      lsp = { method = "textDocument/codeAction" },
-      desc = "Code Action",
-    })
 
     if client:supports_method("textDocument/documentHighlight") then
       vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
