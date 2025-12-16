@@ -4,6 +4,7 @@ vim.lsp.enable({
   "clangd",
   "pyright",
   "rust_analyzer",
+  "yamlls",
   "zls",
 })
 
