@@ -18,15 +18,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.lsp.inlay_hint.enable(true, { bufnr = buf })
     end
 
-    if client:supports_method("textDocument/definition") then
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = buf, desc = "Go to definition" })
-    end
+    Snacks.keymap.set("n", "<leader>k",
+      function() vim.lsp.buf.hover({ border = "single" }) end,
+      { lsp = { method = "textDocument/hover" }, buffer = buf, desc = "Show hover documentation" })
 
-    if client:supports_method("textDocument/hover") then
-      vim.keymap.set("n", "<leader>k",
-        function() vim.lsp.buf.hover({ border = "single" }) end,
-        { buffer = buf, desc = "Show hover documentation" })
-    end
+    Snacks.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {
+      lsp = { method = "textDocument/codeAction" },
+      desc = "Code Action",
+    })
 
     if client:supports_method("textDocument/documentHighlight") then
       vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {

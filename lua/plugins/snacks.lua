@@ -17,6 +17,8 @@ return {
     { "]w",         function() Snacks.words.jump(vim.v.count1) end,     desc = "Next Reference",     mode = { "n", "t" } },
     { "[w",         function() Snacks.words.jump(-vim.v.count1) end,    desc = "Prev Reference",     mode = { "n", "t" } },
     { "<c-_>",      function() Snacks.terminal() end,                   desc = "Toggle Terminal",    mode = { "n", "t" } },
+    -- find
+    { "<c-p>",      function() Snacks.picker.files() end,               desc = "Find Files" },
     -- grep
     { "<leader>lg", function() Snacks.picker.grep() end,                desc = "Grep" },
     -- search
