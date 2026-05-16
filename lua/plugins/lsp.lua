@@ -1,8 +1,20 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    version = "*",
-    event = { "BufReadPre", "BufNewFile" },
+    "mason-org/mason-lspconfig.nvim",
+    dependencies = {
+      { "mason-org/mason.nvim",  version = "*", opts = {} },
+      { "neovim/nvim-lspconfig", version = "*" },
+    },
+    opts = {
+      ensure_installed = {
+        "gopls",
+        "lua_ls",
+        "pyright",
+        "tailwindcss",
+        "yamlls",
+      },
+      automatic_enable = true,
+    },
   },
   {
     "stevearc/conform.nvim",
