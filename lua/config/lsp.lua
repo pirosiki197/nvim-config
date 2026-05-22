@@ -1,4 +1,5 @@
 vim.lsp.enable({
+  "buf_ls",
   "clangd",
   "hls",
   "rust_analyzer",
