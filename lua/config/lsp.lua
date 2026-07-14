@@ -3,6 +3,7 @@ vim.lsp.enable({
   "clangd",
   "hls",
   "rust_analyzer",
+  "tsgo",
   "zls",
 })
 
